@@ -4,8 +4,8 @@
 }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: gray;
+  user-select: none;
 }
 
 .visually-hidden {
@@ -19,12 +19,12 @@ body {
   position: absolute;
   /* top: 127px; */
   /* left: 14px; */
-  top: 287px;
-  left: 54px;
+  top: 200px;
+  left: 114px;
   width: 104px;
   height: 24px;
   perspective: 500px;
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
 }
 
 .search__drum-container {
@@ -46,19 +46,28 @@ body {
   color: #e2e2e2;
 }
 
-/*
-  perspective - создает 3D пространство для элементов
-  transform-origin - определяет относительно какой точки элемент будет трансформироваться
-  transform-style - сохраняет 3D пространство для дочерних элементов
-  backface-visibility - отвечает за отображение обратной стороны элемента
-  
-  Список методов свойства transform:
-  perspective - создает 3D пространство для одного элемента
-  translateZ - двигает элемент по оси Z
-  translate3d - сдвигает элемент по всем осям
-  scaleZ - масштабирует ось Z
-  scale3d - масштабирует элемент по всем осям
-  rotateX - вращает элемент по оси X
-  rotateY - вращает элемент по оси Y
-  rotateZ - вращает элемент по оси Z
-  */
+.span--place,
+.span--hall {
+  position: absolute;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.span--hall {
+  top: 6px;
+  left: 110px;
+}
+
+.span--place {
+  top: 6px;
+  left: -73px;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 70px;
+}
+
+.side__span-place2 {
+  margin-left: 5px;
+  text-align: right;
+}
