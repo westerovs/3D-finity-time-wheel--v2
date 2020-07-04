@@ -1,10 +1,14 @@
+:root {
+  --fontMain: 'HelveticaNeueCyr', 'Roboto', 'Arial', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: gray;
+  background-color: #333;
   user-select: none;
 }
 
@@ -17,57 +21,91 @@ body {
 
 .search__drum {
   position: absolute;
-  /* top: 127px; */
+  top: 127px;
   /* left: 14px; */
-  top: 200px;
-  left: 114px;
+  left: 54px;
   width: 104px;
   height: 24px;
   perspective: 500px;
-  /* transform: scale(0.8); */
+  transform: scale(0.8);
 }
 
 .search__drum-container {
-  width: inherit;
-  height: inherit;
+  width: 104px;
+  height: 24px;
   transform-style: preserve-3d;
 }
 
 .search__drum-side {
-  outline: 1px solid #ccc;
+  outline: 1px dashed gold;
   position: absolute;
-  width: inherit;
-  height: inherit;
+  min-width: 120px;
   backface-visibility: hidden;
-  font-family: SF Pro Text;
-  font-size: 20px;
+  font-size: 23px;
   text-align: right;
   letter-spacing: 2px;
   color: #e2e2e2;
+  white-space: nowrap;
 }
 
-.span--place,
-.span--hall {
+.search__side-item {
+  font-size: 18px;
+  font-family: var(--fontMain);
+}
+
+.search__side-item--places,
+.search__side-item--hall {
   position: absolute;
-  font-size: 14px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 300;
 }
 
-.span--hall {
+.search__side-item--hall {
   top: 6px;
-  left: 110px;
+  left: 120px;
 }
 
-.span--place {
-  top: 6px;
-  left: -73px;
+.search__side-item--places {
+  top: 3px;
+  left: -78px;
   display: flex;
   justify-content: flex-end;
-  min-width: 70px;
+  min-width: 80px;
 }
 
-.side__span-place2 {
-  margin-left: 5px;
+.search__side-places-text {
+  margin-left: 3px;
   text-align: right;
+}
+
+/* центр времени */
+.search__side-time {
+  min-width: inherit;
+  height: 24px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search__side-time-item {
+  letter-spacing: 0.1px;
+  text-align: center;
+  min-width: 40px;
+}
+
+.search__side-time-item--hour {
+  text-align: center;
+  min-width: 40px;
+
+}
+
+.search__side-time-item--separator {
+  min-width: 10px;
+  text-align: center;
+
+}
+
+.search__side-time-item--minute {
+  text-align: center;
+  min-width: 40px;
 }
