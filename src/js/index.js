@@ -33,7 +33,7 @@ class DrumTime {
         this.rotateY = 3
         this.rotateX = 30
 
-        this.inititalRotateX = 30
+        this.initRotateX = 30
         this.startProgress = 0
         this.startRotate = 0
         this.progress = 0
@@ -87,7 +87,7 @@ class DrumTime {
     }
 
     drumTurnDeg = () => {
-        this.rotateX = this.inititalRotateX
+        this.rotateX = this.initRotateX
         this.progress = 0
         this.startProgress = 0
         this.drumContainer.style.transform = `rotateY(${ this.rotateY }deg) rotateX(${ this.rotateX }deg)`
@@ -103,8 +103,8 @@ class DrumTime {
             }
 
             if (this.drumSide.length < 9) {
-                this.inititalRotateX = -35 + Math.trunc(this.drumSide.length / 2) * 15
-                this.rotateX = this.inititalRotateX
+                this.initRotateX = -35 + Math.trunc(this.drumSide.length / 2) * 15
+                this.rotateX = this.initRotateX
                 this.drumContainer.style.transform = `rotateY(${ this.rotateY }deg) rotateX(${ this.rotateX }deg)`
             }
         })
@@ -139,11 +139,11 @@ class DrumTime {
         // ---------------------------------------- стопор элементов < 9
         if (this.drumSide.length <= 9 && this.progress > Math.trunc(this.drumSide.length / 2) * this.step) {
             this.progress = Math.trunc(this.drumSide.length / 2) * (this.step)
-            this.rotateX = Math.trunc(this.drumSide.length / 2) * (this.step) + this.inititalRotateX
+            this.rotateX = Math.trunc(this.drumSide.length / 2) * (this.step) + this.initRotateX
         }
         if (this.drumSide.length <= 9 && this.progress < -Math.trunc(this.drumSide.length / 2) * this.step) {
             this.progress = -Math.trunc(this.drumSide.length / 2) * (this.step)
-            this.rotateX = -Math.trunc(this.drumSide.length / 2) * (this.step) + this.inititalRotateX
+            this.rotateX = -Math.trunc(this.drumSide.length / 2) * (this.step) + this.initRotateX
         }
         this.drumContainer.style.transform = `rotateY(${ this.rotateY }deg) rotateX(${ this.rotateX }deg)`
 
@@ -177,7 +177,7 @@ class DrumTime {
 
             this.drumSide.forEach((drumSideItem, drumSideIndex) => {
                 if ((
-                    (drumSideIndex * this.step) >= this.progress + (-30 + this.inititalRotateX)
+                    (drumSideIndex * this.step) >= this.progress + (-30 + this.initRotateX)
                         && (drumSideIndex * this.step) < this.progress + this.visuallyZone)) {
                     drumSideItem.classList.remove('visually-hidden')
                     this.centerEl = Math.trunc((this.progress + (this.vZone / 2)) / this.step)
@@ -227,7 +227,7 @@ class DrumTime {
 
                 this.startRotate = this.rotateX
                 // автопрокрутка:  30     -     135 / 2        +  index     * 15    +    15 / 2
-                this.rotateX = this.inititalRotateX - (this.vZone / 2) + (indexTime * this.step) // + (step / 2);
+                this.rotateX = this.initRotateX - (this.vZone / 2) + (indexTime * this.step) // + (step / 2);
 
                 await this.animationMoveDrum(1700)
             }
@@ -245,9 +245,11 @@ class DrumTime {
             typeAnim: animationTime => Math.pow(animationTime, 1),
             // отрисовка
             draw: progressAnimations => {
-                this.drumContainer.style.transform = `rotateY(${ this.rotateY }deg) rotateX(${ this.startRotate + progressAnimations * (this.autoRotate) }deg)`
+                this.drumContainer.style.transform = `
+                    rotateY(${ this.rotateY }deg)
+                    rotateX(${ this.startRotate + progressAnimations * (this.autoRotate) }deg)`
 
-                this.newProgressAnimat = this.startRotate + progressAnimations * (this.autoRotate) - this.inititalRotateX
+                this.newProgressAnimat = this.startRotate + progressAnimations * (this.autoRotate) - this.initRotateX
                 this.progress = this.newProgressAnimat
                 this.startProgress = this.progress
 

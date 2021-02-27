@@ -1,8 +1,8 @@
 {
-  "name": "3d-finity-time-wheel--v2",
+  "name": "3d-drum",
   "version": "1.0.0",
-  "description": "бесконечный 3d барабан выбора времени сеанс",
-  "main": "index.js",
+  "description": "3d барабан выбора сеанск",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint src"
   },
