@@ -245,8 +245,8 @@ function visuallyAndHiddenElements() {
     console.log(progress)
     drumSide.forEach((drumSideItem, drumSideIndex) => {
       if ((
-          (drumSideIndex * step) >= progress + (-30 + inititalRotateX) &&
-          (drumSideIndex * step) < progress + visuallyZone) ||
+        (drumSideIndex * step) >= progress + (-30 + inititalRotateX) &&
+        (drumSideIndex * step) < progress + visuallyZone) ||
         drumSideItem.classList.contains("repeated")
       ) {
         drumSideItem.classList.remove("visually-hidden");
@@ -254,7 +254,7 @@ function visuallyAndHiddenElements() {
         // console.warn(`centerEl:`, centerEl)
 
         if (drumSideIndex < centerEl) {
-          drumSideItem.style.opacity = `${1- (centerEl - drumSideIndex) / 5}`;
+          drumSideItem.style.opacity = `${1 - (centerEl - drumSideIndex) / 5}`;
         }
 
         if (drumSideIndex > centerEl) {
