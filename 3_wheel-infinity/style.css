@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.search__drum {
+  position: absolute;
+  top: 127px;
+  left: 14px;
+  width: 104px;
+  height: 24px;
+  perspective: 500px;
+  transform: scale(0.8);
+}
+
+.search__drum-container {
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+}
+
+.search__drum-side {
+  outline: 1px solid #ccc;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  backface-visibility: hidden;
+  font-family: SF Pro Text;
+  font-size: 20px;
+  text-align: right;
+  letter-spacing: 2px;
+  color: #e2e2e2;
+}
+
+/*
+  perspective - создает 3D пространство для элементов
+  transform-origin - определяет относительно какой точки элемент будет трансформироваться
+  transform-style - сохраняет 3D пространство для дочерних элементов
+  backface-visibility - отвечает за отображение обратной стороны элемента
+  
+  Список методов свойства transform:
+  perspective - создает 3D пространство для одного элемента
+  translateZ - двигает элемент по оси Z
+  translate3d - сдвигает элемент по всем осям
+  scaleZ - масштабирует ось Z
+  scale3d - масштабирует элемент по всем осям
+  rotateX - вращает элемент по оси X
+  rotateY - вращает элемент по оси Y
+  rotateZ - вращает элемент по оси Z
+  */

@@ -37,7 +37,7 @@ body {
 }
 
 .search__drum-side {
-  outline: 1px dashed gold;
+  outline: 1px dashed gray;
   position: absolute;
   min-width: 120px;
   backface-visibility: hidden;
@@ -63,12 +63,12 @@ body {
 
 .search__side-item--hall {
   top: 6px;
-  left: 120px;
+  left: 125px;
 }
 
 .search__side-item--places {
   top: 3px;
-  left: -78px;
+  left: -85px;
   display: flex;
   justify-content: flex-end;
   min-width: 80px;

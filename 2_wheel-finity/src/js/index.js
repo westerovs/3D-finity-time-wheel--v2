@@ -80,7 +80,7 @@ class DrumTime {
     getTimeSessionArr(place) {
         this.countTime = 1
 
-        for (let i = 1; i <= 36; i++) {
+        for (let i = 1; i <= 999; i++) {
             render(place, this.createTimeSessionTemplate(this.countTime))
             this.countTime++
         }
